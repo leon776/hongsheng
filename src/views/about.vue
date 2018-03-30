@@ -178,9 +178,7 @@ export default {
         }
     },
     created() {
-        this.head = this.fetch('lang', 0);
-        this.body = this.fetch('lang', 1);
-        // console.log(this.$ssrContext)
+        this.head = this.fetch('head');
     },
 }
 </script>

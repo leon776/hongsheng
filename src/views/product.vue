@@ -35,8 +35,24 @@
               <s8 v-if="page === 's8'"></s8>
           </div>
       </div>
+      <div id="modal" class="c-modal" style="display: none;">
+          <div class="clearfix inner">
+              <div class="img-box">
+                  <img src="" class="modal-pic" id="modalPic">
+              </div>
+              <div class="content-box">
+                  <div class="title" id="modalTitle"></div>
+                  <div id="modalContent"></div>
+                  <div style="margin-top:12px;">
+                    <span id="modalProk"></span>: <span id="modalProv"></span>
+                  </div>
+                  <p><a id="modalHref" href="#" target="_blank"></a></p>
+              </div>
+          </div>
+      </div>
   </div>
   <v-footer></v-footer>
+  <template v-html="script"></template>
 </div>
 </template>
 
@@ -53,7 +69,7 @@ import s8 from '@/components/product/s8.vue';
 import mixin from '@/mixins/mixin';
 
 export default {
-  name: 'about',
+  name: 'product',
   components: {
       vFooter,
       s1,
@@ -72,13 +88,14 @@ export default {
       page: this.$route.query.p || 's1',
       head: [],
       body: [],
-      script: `\<script src="/static/js/inject/product.js"\><\/script\>`,
+      script: `
+        \<script src="/static/js/layer/layer.js"\><\/script\>
+        \<script src="/static/js/inject/product.js"\><\/script\>
+      `,
     }
   },
   created() {
-      this.head = this.fetch('lang', 0);
-      this.body = this.fetch('lang', 1);
-      // console.log(this.$ssrContext)
+
   },
 }
 </script>

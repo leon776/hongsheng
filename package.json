@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "link": "npm link webpack && npm link webpack-dev-server",
-    "server": "node build/server.js"
+    "server": "node build/server.js",
+    "node": "supervisor -w ./dist -e json ./src/server.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",

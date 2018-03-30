@@ -1,14 +1,14 @@
 <template>
 <div class="content-item ct2 current">
     <div class="row work-row" id="works">
-        <div class="col">
-            <a href="/workDetail?q=1" class="info-box">
+        <div class="col" v-for="(item, index) in data">
+            <a :href="'/workDetail?q=' + index" class="info-box">
                 <div class="title">
-                    Sales Engineer Sales Engineer
+                    {{item.title}}
                 </div>
-                <p class="i-t">香港鸿昇电子器材有限公司</p>
-                <p class="i-p"><span class="c-gray">工作地点：</span>香港</p>
-                <p class="i-p"><span class="c-gray">发布日期：</span>May 2016</p>
+                <p class="i-t">{{item.name}}</p>
+                <p class="i-p"><span class="c-gray">{{item.addressKey}}：</span>{{item.addressVal}}</p>
+                <p class="i-p"><span class="c-gray">{{item.dateKey}}：</span>{{item.dateVal}}</p>
             </a>
         </div>
     </div>
@@ -16,7 +16,33 @@
 </div>
 </template>
 <script>
-export default {
+import mixin from '@/mixins/mixin';
 
+export default{
+    data() {
+        return {
+            data: [],
+            lang: this.$ssrContext.lang,
+            current: '',
+        };
+    },
+    computed: {
+        dataIndex() {
+            let res = 0;
+            switch(this.lang) {
+                case 'hk':
+                    res = 1;
+                    break;
+                case 'en':
+                    res = 2;
+                    break;
+            }
+            return res;
+        },
+    },
+    mixins: [mixin],
+    created() {
+        this.data = this.fetch('工作机会', this.dataIndex);
+    },
 }
 </script>

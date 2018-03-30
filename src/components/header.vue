@@ -74,7 +74,10 @@
                 </li>
             </ul>
         </div>
-
+            
+        <div class="lang-box" style="right:100px;">
+            <a :href="data[27][lang]" class="lang-title" target="_blank">{{data[26][lang]}}</a>
+        </div>
         <div class="lang-box" :class="{
             'cur-zh': lang === 'zh',
             'cur-hk': lang === 'hk',
@@ -107,7 +110,7 @@ export default{
     },
     mixins: [mixin],
     created() {
-        this.data = this.fetch('lang', 0);
+        this.data = this.fetch('导航');
         this.current = this.$route.meta.active || '';
     },
 }

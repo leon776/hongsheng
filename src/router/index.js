@@ -37,7 +37,7 @@ export function createRouter () {
         path: '/advantage',
         name: 'advantage',
         meta: {
-          active: 'advantage',
+          active: 'about',
           title: {
             zh: '我们的优势 - 香港鸿升集团',
             hk: '我们的优势 - 香港鸿升集团',
