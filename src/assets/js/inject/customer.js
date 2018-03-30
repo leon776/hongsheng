@@ -17,14 +17,6 @@
         }
     }
 
-    $(function () {
-        $('.left-bar .w-btn').click(function(){
-            var index = $(this).index(),target = $(this).attr('data-target');
-            location.hash = target;
-            $(this).addClass('active').siblings().removeClass('active');
-            $('.tab-content-list .content-item').eq(index).addClass('current').siblings().removeClass('current');
-        })
-    })
     var option1 = {
         title : {
             text: '行业比例',
@@ -139,9 +131,17 @@
 
     function initChart(){
         setTimeout(function(){
-            var eChart1 = echarts.init(document.getElementById('echarts1'));
-            var eChart2 = echarts.init(document.getElementById('echarts2'));
-            eChart1.setOption(option1);
-            eChart2.setOption(option2);
+            if(document.getElementById('echarts1')) {
+                var eChart1 = echarts.init(document.getElementById('echarts1'));
+                var eChart2 = echarts.init(document.getElementById('echarts2'));
+                eChart1.setOption(option1);
+                eChart2.setOption(option2);
+            }
         },20)
+    }
+    try {
+        initSwiper();
+        initChart();
+    } catch(e) {
+        console.warn(e)
     }

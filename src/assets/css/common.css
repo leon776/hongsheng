@@ -26,7 +26,7 @@ header, footer, article, section, nav, menu, hgroup {display:block;margin:0;padd
 input,textarea{border: none;outline: none;}
 input::-ms-clear { display: none; }
 button {font-family:"Microsoft YaHei","微软雅黑","黑体","宋体",Helvetica,Arial,Tahoma;}
-.container {position: relative; margin:0 auto; width:93%;max-width: 1780px;min-width: 1200px;height:auto;}
+.container {position: relative; margin:0 auto; width:93%;max-width: 1780px;min-width: 1200px;height:auto;padding-bottom: 60px;}
 .btn{-webkit-user-select:none;-moz-user-select:none;user-select:none;}
 body{min-width: 1200px;}
 /* ----End Reset---- */
