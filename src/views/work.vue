@@ -3,7 +3,7 @@
   <div class="page-banner">
       <div class="container">
           <div class="title-box">
-              <h2 class="c-title">求职</h2>
+              <h2 class="c-title">{{head(17)}}</h2>
               <p class="c-intro">career</p>
               <div class="line"></div>
           </div>
@@ -11,12 +11,12 @@
   </div>
   <div class="container">
       <div class="page-guide type1">
-          您的位置：<a href="/">首页</a><em class="song"> &gt; </em><a href="/work" class="cur">为什么选择鸿昇</a>
+          {{head(25)}}：<a href="/">{{head(0)}}</a><em class="song"> &gt; </em><a href="/work" class="cur">{{head(17)}}</a>
       </div>
       <div class="left-bar left-bar-inline">
-          <a href="/work?p=s1" class="w-btn" :class="{'active' : page === 's1'}">为什么选择鸿昇</a>
-          <a href="/work?p=s2" class="w-btn" :class="{'active' : page === 's2'}">工作机会</a>
-          <a href="/work?p=s3" class="w-btn" :class="{'active' : page === 's3'}">人力资源联络窗口</a>
+          <a href="/work?p=s1" class="w-btn" :class="{'active' : page === 's1'}">{{head(18)}}</a>
+          <a href="/work?p=s2" class="w-btn" :class="{'active' : page === 's2'}">{{head(19)}}</a>
+          <a href="/work?p=s3" class="w-btn" :class="{'active' : page === 's3'}">{{head(20)}}</a>
       </div>
       <div class="tab-content-list">
           <s1 v-if="page === 's1'"></s1>

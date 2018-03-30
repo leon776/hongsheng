@@ -6,11 +6,11 @@
                 <img src="/static/images/adv1.jpg" class="full-bg">
                 <div class="container">
                     <div class="page-guide">
-                        您的位置：<a href="/">首页</a><em class="song"> &gt; </em><a href="javascript:">我们的优势</a>
+                        {{head(25)}}：<a href="/">{{head(0)}}</a><em class="song"> &gt; </em><a href="javascript:">{{head(3)}}</a>
                     </div>
                     <div class="clearfix">
                         <div class="fl">
-                            <a href="/about" class="w-btn">关于鸿昇</a><a href="/advantage" class="w-btn active">我们的优势</a>
+                            <a href="/about" class="w-btn">{{head(2)}}</a><a href="/advantage" class="w-btn active">{{head(3)}}</a>
                         </div>
                     </div>
                     <div class="main-box">
@@ -207,7 +207,7 @@ export default {
     data () {
         return {
             lang: this.$ssrContext.lang,
-            head: [],
+            headData: [],
             body: [],
             script: `\<script src="/static/js/inject/advantage.js"\><\/script\>`,
         }

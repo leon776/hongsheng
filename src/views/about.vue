@@ -6,11 +6,11 @@
                 <img src="/static/images/about-bg.jpg" class="full-bg">
                 <div class="container">
                     <div class="page-guide">
-                        {{head[25][lang]}}：<a href="/">{{head[0][lang]}}</a><em class="song"> &gt; </em><a href="javascript:">{{head[2][lang]}}</a>
+                        {{head(25)}}：<a href="/">{{head(0)}}</a><em class="song"> &gt; </em><a href="javascript:">{{head(2)}}</a>
                     </div>
                     <div class="clearfix">
                         <div class="fl">
-                            <a href="/about" class="w-btn active">{{head[2][lang]}}</a><a href="/advantage" class="w-btn">{{head[3][lang]}}</a>
+                            <a href="/about" class="w-btn active">{{head(2)}}</a><a href="/advantage" class="w-btn">{{head(3)}}</a>
                         </div>
                         <div class="fr card-wapper">
                             <div class="card ani"  swiper-animate-effect="fadeInRight" swiper-animate-duration="0.6s" swiper-animate-delay="0.2s">
@@ -172,13 +172,12 @@ export default {
     data () {
         return {
             lang: this.$ssrContext.lang,
-            head: [],
+            headData: [],
             body: [],
             script: `\<script src="/static/js/inject/about.js"\><\/script\>`,
         }
     },
     created() {
-        this.head = this.fetch('导航');
     },
 }
 </script>

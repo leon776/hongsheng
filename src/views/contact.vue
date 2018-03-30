@@ -3,7 +3,7 @@
   <div class="page-banner">
       <div class="container">
           <div class="title-box">
-              <h2 class="c-title">联络我们</h2>
+              <h2 class="c-title">{{head(21)}}</h2>
               <p class="c-intro">Contact us</p>
               <div class="line"></div>
           </div>
@@ -11,12 +11,12 @@
   </div>
   <div class="container">
       <div class="page-guide type1">
-          您的位置：<a href="index.html">首页</a><em class="song"> &gt; </em><a href="/contact" class="cur">联络我们</a>
+          {{head(25)}}：<a href="index.html">{{head(0)}}</a><em class="song"> &gt; </em><a href="/contact" class="cur">{{head(21)}}</a>
       </div>
       <div class="left-bar left-bar-inline">
-          <a href="/contact?p=s1" class="w-btn" :class="{'active' : page === 's1'}">工厂</a>
-          <a href="/contact?p=s2" class="w-btn" :class="{'active' : page === 's2'}">销售部</a>
-          <a href="/contact?p=s3" class="w-btn" :class="{'active' : page === 's3'}">仓库</a>
+          <a href="/contact?p=s1" class="w-btn" :class="{'active' : page === 's1'}">{{head(22)}}</a>
+          <a href="/contact?p=s2" class="w-btn" :class="{'active' : page === 's2'}">{{head(23)}}</a>
+          <a href="/contact?p=s3" class="w-btn" :class="{'active' : page === 's3'}">{{head(24)}}</a>
       </div>
       <div class="tab-content-list">
           <s1 v-if="page === 's1'"></s1>
@@ -49,7 +49,7 @@ export default {
     return {
       lang: this.$ssrContext.lang,
       page: this.$route.query.p || 's1',
-      head: [],
+      headData: [],
       body: [],
       script: `\<script src="/static/js/inject/contact.js"\><\/script\>`,
     }

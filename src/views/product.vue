@@ -3,7 +3,7 @@
   <div class="page-banner">
       <div class="container">
           <div class="title-box">
-              <h2 class="c-title">产品及服务</h2>
+              <h2 class="c-title">{{head(4)}}</h2>
               <p class="c-intro">Products & Services</p>
               <div class="line"></div>
           </div>
@@ -11,18 +11,18 @@
   </div>
   <div class="container">
       <div class="left-bar">
-          <a href="/product?p=s1" class="w-btn" :class="{'active' : page === 's1'}">电子产品、标签、烘焙能力</a>
-          <a href="/product?p=s2" class="w-btn" :class="{'active' : page === 's2'}">产品线</a>
-          <a href="/product?p=s3" class="w-btn" :class="{'active' : page === 's3'}">线束装配和印刷电路板组件</a>
-          <a href="/product?p=s4" class="w-btn" :class="{'active' : page === 's4'}">纸张切割</a>
-          <a href="/product?p=s5" class="w-btn" :class="{'active' : page === 's5'}">原始设计制造商及项目早期介入</a>
-          <a href="/product?p=s6" class="w-btn" :class="{'active' : page === 's6'}">售后服务</a>
-          <a href="/product?p=s7" class="w-btn" :class="{'active' : page === 's7'}">供应链管理</a>
-          <a href="/product?p=s8" class="w-btn" :class="{'active' : page === 's8'}">烘培和甜点</a>
+          <a href="/product?p=s1" class="w-btn" :class="{'active' : page === 's1'}">{{head(4)}}</a>
+          <a href="/product?p=s2" class="w-btn" :class="{'active' : page === 's2'}">{{head(5)}}</a>
+          <a href="/product?p=s3" class="w-btn" :class="{'active' : page === 's3'}">{{head(6)}}</a>
+          <a href="/product?p=s4" class="w-btn" :class="{'active' : page === 's4'}">{{head(7)}}</a>
+          <a href="/product?p=s5" class="w-btn" :class="{'active' : page === 's5'}">{{head(8)}}</a>
+          <a href="/product?p=s6" class="w-btn" :class="{'active' : page === 's6'}">{{head(9)}}</a>
+          <a href="/product?p=s7" class="w-btn" :class="{'active' : page === 's7'}">{{head(10)}}</a>
+          <a href="/product?p=s8" class="w-btn" :class="{'active' : page === 's8'}">{{head(11)}}</a>
       </div>
       <div class="right-main-wrapper">
           <div class="page-guide">
-              您的位置：<a href="/">首页</a><em class="song"> &gt; </em><a href="/product?p=s1" class="cur">产品及服务</a>
+              {{head(25)}}：<a href="/">{{head(0)}}</a><em class="song"> &gt; </em><a href="/product?p=s1" class="cur">{{head(4)}}</a>
           </div>
           <div class="tab-content-list">
               <s1 v-if="page === 's1'"></s1>
@@ -86,7 +86,7 @@ export default {
     return {
       lang: this.$ssrContext.lang,
       page: this.$route.query.p || 's1',
-      head: [],
+      headData: [],
       body: [],
       script: `
         \<script src="/static/js/layer/layer.js"\><\/script\>
@@ -95,7 +95,10 @@ export default {
     }
   },
   created() {
-
+    
   },
+  methods: {
+
+  }
 }
 </script>

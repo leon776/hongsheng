@@ -9,9 +9,13 @@ const serverTitleMixin = {
   created () {
     const title = getTitle(this)
     this.$ssrContext.title = title || '';
+    this.headData = this.fetch('导航');
   },
   methods: {
-    fetch
+    fetch,
+    head(index) {
+      return this.headData[index][this.lang];
+    },
   }
 }
 const clientTitleMixin = {
