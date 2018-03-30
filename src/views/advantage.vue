@@ -6,11 +6,11 @@
                 <img src="/static/images/adv1.jpg" class="full-bg">
                 <div class="container">
                     <div class="page-guide">
-                        您的位置：<a href="index.html">首页</a><em class="song"> &gt; </em><a href="advantage.html">我们的优势</a>
+                        您的位置：<a href="/">首页</a><em class="song"> &gt; </em><a href="javascript:">我们的优势</a>
                     </div>
                     <div class="clearfix">
                         <div class="fl">
-                            <a href="about.html" class="w-btn">关于鸿昇</a><a href="advantage.html" class="w-btn active">我们的优势</a>
+                            <a href="/about" class="w-btn">关于鸿昇</a><a href="/advantage" class="w-btn active">我们的优势</a>
                         </div>
                     </div>
                     <div class="main-box">

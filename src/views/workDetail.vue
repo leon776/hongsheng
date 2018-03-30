@@ -3,8 +3,8 @@
   <div class="container">
     <div class="inner-main">
         <div class="page-guide type1">
-            <a href="javascript:history.go(-1)" class="w-btn active go-back" style="z-index: 99;">返回</a>
-            您的位置：<a href="/">首页</a><em class="song"> &gt; </em><a :href="'/work?p=' + page">工作机会</a><em class="song"> &gt; </em><a href="javascript:" class="cur">招聘详情</a>
+            <a href="javascript:history.go(-1)" class="w-btn active go-back" style="z-index: 99;">{{head[28][lang]}}</a>
+            {{head[25][lang]}}：<a href="/">{{head[0][lang]}}</a><em class="song"> &gt; </em><a :href="'/work?p=' + page">工作机会</a><em class="song"> &gt; </em><a href="javascript:" class="cur">招聘详情</a>
         </div>
         <div class="work-box">
             <div class="title">{{content.title}}</div>
@@ -40,6 +40,7 @@ export default {
     return {
       lang: this.$ssrContext.lang,
       page: this.$route.query.q || 0,
+      head: [],
       content: {},
       script: `\<script src="/static/js/inject/workDetail.js"\><\/script\>`,
     }
@@ -59,6 +60,7 @@ export default {
     },
   },
   created() {
+    this.head = this.fetch('导航');
     this.content = this.fetch('工作机会', this.dataIndex)[this.page];
     this.content.content = this.content.content.replace(/[\n\r\t]/g, '<br />');
   },

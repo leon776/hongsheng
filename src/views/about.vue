@@ -178,7 +178,7 @@ export default {
         }
     },
     created() {
-        this.head = this.fetch('head');
+        this.head = this.fetch('导航');
     },
 }
 </script>

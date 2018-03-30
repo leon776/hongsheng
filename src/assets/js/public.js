@@ -30,8 +30,8 @@ $(function(){
 	});
 
 	//lang-box
-	$('.lang-box').hover(function(){
-		$('.lang-box').toggleClass('active');
+	$('#langBox').hover(function(){
+		$('#langBox').toggleClass('active');
 	})
 	$('.lang-li .item').click(function() {
 		var lang = $(this).data('lang');

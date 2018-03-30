@@ -78,7 +78,7 @@
         <div class="lang-box" style="right:100px;">
             <a :href="data[27][lang]" class="lang-title" target="_blank">{{data[26][lang]}}</a>
         </div>
-        <div class="lang-box" :class="{
+        <div id="langBox" class="lang-box" :class="{
             'cur-zh': lang === 'zh',
             'cur-hk': lang === 'hk',
             'cur-en': lang === 'en',
