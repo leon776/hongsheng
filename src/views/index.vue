@@ -416,6 +416,11 @@
                                             <img class="logo" src="/static/images/tech/logo24.png">
                                         </div>
                                     </div>
+                                    <div class="swiper-slide">
+                                        <div class="cus-box">
+                                            <img class="logo" src="/static/images/tech/logo25.png">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="swiper-pagination"></div>
                             </div>

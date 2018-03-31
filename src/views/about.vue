@@ -41,51 +41,11 @@
                                     <i class="icon icon-t-left"></i>
                                     <i class="icon icon-t-right"></i>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" v-for="(item,index) in historyList" :onclick="'showModal('+ JSON.stringify(item) +', \''+ '/static/images/history'+ (index + 1) +'.jpg' +'\')'">
                                     <i class="icon icon-time-dot"></i>
                                     <div class="time-box">
-                                        <div class="year">1984</div>
-                                        <p class="intro">成为日本压着端子在香港和中国大陆地区第一家授权经销商</p>
-                                        <div class="triangle"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <i class="icon icon-time-dot"></i>
-                                    <div class="time-box">
-                                        <div class="year">1984</div>
-                                        <p class="intro">成为日本压着端子在香港和中国大陆地区第一家授权经销商</p>
-                                        <div class="triangle"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <i class="icon icon-time-dot"></i>
-                                    <div class="time-box">
-                                        <div class="year">1984</div>
-                                        <p class="intro">成为日本压着端子在香港和中国大陆地区第一家授权经销商</p>
-                                        <div class="triangle"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <i class="icon icon-time-dot"></i>
-                                    <div class="time-box">
-                                        <div class="year">1984</div>
-                                        <p class="intro">成为日本压着端子在香港和中国大陆地区第一家授权经销商</p>
-                                        <div class="triangle"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <i class="icon icon-time-dot"></i>
-                                    <div class="time-box">
-                                        <div class="year">1984</div>
-                                        <p class="intro">成为日本压着端子在香港和中国大陆地区第一家授权经销商</p>
-                                        <div class="triangle"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <i class="icon icon-time-dot"></i>
-                                    <div class="time-box">
-                                        <div class="year">1984</div>
-                                        <p class="intro">成为日本压着端子在香港和中国大陆地区第一家授权经销商</p>
+                                        <div class="year">{{item.title}}</div>
+                                        <p class="intro">{{item.content}}</p>
                                         <div class="triangle"></div>
                                     </div>
                                 </div>
@@ -109,37 +69,16 @@
             <div class="swiper-slide s4">
                 <div class="swiper-container h-swiper people-swiper ani"  swiper-animate-effect="fadeIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" v-for="(item,index) in team">
                             <div class="container">
                                 <div class="info">
                                     <div class="pic-box">
-                                        <img class="people-pic" src="/static/images/about6.jpg">
+                                        <img class="people-pic" :src="'/static/images/about-team'+(index+1)+'.jpg'">
                                     </div>
                                     <div class="content">
-                                        <div class="c-title">某女生</div>
-                                        <p class="c-intro">某某职位</p>
-                                        <div class="txt">
-                                            这是一段演示文案。无论学历高低、工作时间长短，若失去奋斗为本、长期艰苦创业的斗志斗魂、失去打拼干事创
-                                            业的危机感紧迫感责任感、失去自动自发的内驱力，就会不进则退。
-                                        </div>
-                                    </div>
-                                    <div class="cb"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="info">
-                                    <div class="pic-box">
-                                        <img class="people-pic" src="/static/images/about6.jpg">
-                                    </div>
-                                    <div class="content">
-                                        <div class="c-title">某女生</div>
-                                        <p class="c-intro">某某职位</p>
-                                        <div class="txt">
-                                            这是一段演示文案。无论学历高低、工作时间长短，若失去奋斗为本、长期艰苦创业的斗志斗魂、失去打拼干事创
-                                            业的危机感紧迫感责任感、失去自动自发的内驱力，就会不进则退。
-                                        </div>
+                                        <div class="c-title">{{item.name}}</div>
+                                        <p class="c-intro">{{item.position}}</p>
+                                        <div class="txt" v-html="item.intro"></div>
                                     </div>
                                     <div class="cb"></div>
                                 </div>
@@ -154,6 +93,21 @@
             </div>
         </div>
         <div class="swiper-pagination"></div>
+    </div>
+    <div id="modal" class="c-modal" style="display: none;">
+        <div class="clearfix inner">
+            <div class="img-box">
+                <img src="" class="modal-pic" id="modalPic">
+            </div>
+            <div class="content-box">
+                <div class="title" id="modalTitle"></div>
+                <div id="modalContent"></div>
+                <!--<div style="margin-top:12px;">-->
+                    <!--<span id="modalProk"></span>: <span id="modalProv"></span>-->
+                <!--</div>-->
+                <!--<p><a id="modalHref" href="#" target="_blank"></a></p>-->
+            </div>
+        </div>
     </div>
     <template v-html="script"></template>
 </div>
@@ -174,10 +128,39 @@ export default {
             lang: this.$ssrContext.lang,
             headData: [],
             body: [],
-            script: `\<script src="/static/js/inject/about.js"\><\/script\>`,
+            historyList: {},
+            team: {},
+            script: `
+                \<script src="/static/js/layer/layer.js"\><\/script\>
+                \<script src="/static/js/inject/product.js"\><\/script\>
+                \<script src="/static/js/inject/about.js"\><\/script\>
+            `,
+        }
+    },
+    computed: {
+        dataIndex() {
+            let res = 0;
+            switch(this.lang) {
+                case 'hk':
+                    res = 1;
+                    break;
+                case 'en':
+                    res = 2;
+                    break;
+            }
+            return res;
         }
     },
     created() {
+        this.historyList = this.fetch('集团历史', this.dataIndex);
+        this.historyList.forEach((v, k) => {
+            this.historyList[k].content = this.historyList[k].content.replace(/[\n\r\t]/g, '<br />');
+        });
+
+        this.team = this.fetch('团队', this.dataIndex);
+        this.team.forEach((v, k) => {
+            this.team[k].intro = this.team[k].intro.replace(/[\n\r\t]/g, '<br />');
+    });
     },
 }
 </script>

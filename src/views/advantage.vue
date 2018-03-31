@@ -120,61 +120,11 @@
                         <i class="icon icon-right-circle next"></i>
                         <div class="swiper-container h-swiper book-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a class="inner" href="http://www.hungshang.com.hk/c1.pdf" target="_blank">
-                                        <div class="title">ISO9001 认证（时讯工厂） </div>
+                                <div class="swiper-slide" v-for="(item,index) in certificate">
+                                    <a class="inner" :href="item.url" target="_blank">
+                                        <div class="title">{{item.title}}</div>
                                         <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="inner">
-                                        <div class="title">TS16949 （时讯工厂）</div>
-                                        <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
-                                        </div>
-                                    </a>
-                                </div>
-
-
-                                <div class="swiper-slide">
-                                    <a class="inner">
-                                        <div class="title">ISO14001认证（时讯工厂）</div>
-                                        <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="inner">
-                                        <div class="title">UL E144615 （铅丝）</div>
-                                        <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="inner">
-                                        <div class="title">ISO9005认证（季节工厂）</div>
-                                        <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="inner">
-                                        <div class="title">Bank of China (Environmental Leadership Award) </div>
-                                        <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="inner">
-                                        <div class="title">Avery Dennison (Excellent Distributor of the Year) </div>
-                                        <div class="img-box">
-                                            <img class="img" src="/static/images/adv4.jpg">
+                                            <img class="img" :src="'/static/images/certificate'+(index+1)+'.jpg'">
                                         </div>
                                     </a>
                                 </div>
@@ -209,11 +159,12 @@ export default {
             lang: this.$ssrContext.lang,
             headData: [],
             body: [],
+            certificate: {},
             script: `\<script src="/static/js/inject/advantage.js"\><\/script\>`,
         }
     },
     created() {
-
+        this.certificate = this.fetch('认证证书', this.dataIndex);
     },
 }
 </script>
