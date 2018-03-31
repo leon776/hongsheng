@@ -42,7 +42,7 @@ var option1 = {
         {
             name:'行业比例',
             type:'pie',
-            radius: ['50%', '75%'],
+            radius: ['40%', '55%'],
             avoidLabelOverlap: true,
             label: {
                 normal: {
@@ -99,7 +99,7 @@ var option2 = {
         {
             name:'地区比例',
             type:'pie',
-            radius: ['50%', '75%'],
+            radius: ['40%', '55%'],
             avoidLabelOverlap: true,
             label: {
                 normal: {
