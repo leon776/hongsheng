@@ -9,56 +9,56 @@
       </div>
   </div>
   <br>
-  <p>纸张切割服务已成为标签行业的基本组成部分。鸿昇集团能够将卷筒纸切割为纸张，大型卷筒纸切割为可用尺寸，切割水损卷筒纸以及缩减卷筒纸宽度。公司服务行业包括仓储、纸制品加工、皱纹纸、造纸、商业印刷、出版以及纸制品经纪人业务。</p>
-  <div class="i-title">纸张切割一般流程：</div>
+  <p>{{base(32)}}</p>
+  <div class="i-title">{{base(33)}}：</div>
   <div class="process">
       <div class="row p-row">
           <div class="col">
               <img src="/static/images/ps4-3.png">
-              <div>接单</div>
+              <div>{{base(34)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
           <div class="col">
               <img src="/static/images/ps4-4.png">
-              <div>材料筛选</div>
+              <div>{{base(35)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
           <div class="col">
               <img src="/static/images/ps4-5.png">
-              <div>基底卷切</div>
+              <div>{{base(36)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
 
           <div class="col">
               <img src="/static/images/ps4-6.png">
-              <div>标签切割</div>
+              <div>{{base(37)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
           <div class="col">
               <img src="/static/images/ps4-10.png">
-              <div>实时监控</div>
+              <div>{{base(38)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
           <div class="col">
               <img src="/static/images/ps4-9.png">
-              <div>纸张装卸及包装</div>
+              <div>{{base(39)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
           <div class="col">
               <img src="/static/images/ps4-8.png">
-              <div>唯一条形码</div>
+              <div>{{base(40)}}</div>
               <i class="icon icon-right"></i>
               <div class="line"></div>
           </div>
           <div class="col">
               <img src="/static/images/ps4-7.png">
-              <div>交付客户</div>
+              <div>{{base(41)}}</div>
           </div>
       </div>
   </div>
@@ -66,6 +66,11 @@
 </template>
 <script>
 export default {
-
+  props:['baseData', 'lang'],
+  methods: {
+    base(index) {
+      return this.baseData[index][this.lang];
+    },
+  }
 }
 </script>

@@ -1,21 +1,25 @@
 <template>
 <div class="content-item ct5 current">
-    <p>设计阶段的项目早期介入理想情况下在产品设计的早期开始介入。鸿昇集团实力雄厚的产品经理和设计销售工程师为客户提供全系列设计支持/技术支持服务。我们的宗旨是为尊贵的客户提供单项销售同时提供一站式服务。我们都理念定位在解决方案，产品经理和设计销售工程师将识别客户需求并提供最佳的性价比优化解决方案，我们为客户提供了以下成功设计支持案例。</p>
+    <p>{{base(42)}}</p>
 
     <div class="card-wrapper">
         <div class="row">
-            <div class="col col-33">
+            <div class="col col-33"
+                :onclick="'showModal('+ JSON.stringify(item) +', \''+ '/static/images/pd2-'+ (index + 1) +'.jpg' +'\')'" style="cursor:pointer" 
+                v-for="(item, index) in data"
+                v-if="data.length > 0"
+            >
                 <div class="c-card2">
                     <div class="pic-box">
-                        <img src="/static/images/pd2-1.jpg" class="img">
+                        <img :src="`/static/images/pd2-${index+1}.jpg`" class="img">
                     </div>
                     <div class="clearfix txt-box">
-                        <div class="fl title">深圳和而泰智能控制</div>
-                        <div class="fr intro">Home Appliance</div>
+                        <div class="fl title">{{item.title}}</div>
+                        <div class="fr intro">{{item.enName}}</div>
                     </div>
                 </div>
             </div>
-            <div class="col col-33">
+<!--             <div class="col col-33">
                 <div class="c-card2">
                     <div class="pic-box">
                         <img src="/static/images/pd2-2.jpg" class="img">
@@ -102,13 +106,45 @@
                         <div class="fr intro">Automotive</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
 </template>
 <script>
+import mixin from '@/mixins/mixin';
 export default {
-
+  props:['baseData', 'lang'],
+  mixins: [mixin],
+  computed: {
+    dataIndex() {
+      let res = 0;
+      switch(this.lang) {
+        case 'hk':
+          res = 1;
+          break;
+        case 'en':
+          res = 2;
+          break;
+      }
+      return res;
+    },
+  },
+  data() {
+    return {
+        data: [],
+    };
+  },
+  created() {
+    this.data = this.fetch('原始设计制造商及项目早期介入', this.dataIndex);
+    this.data.forEach((v, k) => {
+      this.data[k].content = this.data[k].content.replace(/[\n\r\t]/g, '<br />');
+    });
+  },
+  methods: {
+    base(index) {
+      return this.baseData[index][this.lang];
+    },
+  }
 }
 </script>
