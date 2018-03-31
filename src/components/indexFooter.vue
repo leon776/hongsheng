@@ -8,45 +8,45 @@
             <div class="col col-20">
                 <dl class="nav-dl">
                     <dt>{{text(1)}}</dt>
-                    <dd><a href="about.html" class="nav-a">{{text(2)}}</a></dd>
-                    <dd><a href="advantage.html" class="nav-a">{{text(3)}}</a></dd>
+                    <dd><a href="/about" class="nav-a">{{text(2)}}</a></dd>
+                    <dd><a href="/advantage" class="nav-a">{{text(3)}}</a></dd>
                 </dl>
             </div>
             <div class="col col-20">
                 <dl class="nav-dl">
                     <dt>{{text(4)}}</dt>
-                    <dd><a href="product.html#s1" class="nav-a">{{text(5)}}</a></dd>
-                    <dd><a href="product.html#s2" class="nav-a">{{text(6)}}</a></dd>
-                    <dd><a href="product.html#s3" class="nav-a">{{text(7)}}</a></dd>
-                    <dd><a href="product.html#s4" class="nav-a">{{text(8)}}</a></dd>
-                    <dd><a href="product.html#s5" class="nav-a">{{text(9)}}</a></dd>
-                    <dd><a href="product.html#s6" class="nav-a">{{text(10)}}</a></dd>
-                    <dd><a href="product.html#s7" class="nav-a">{{text(11)}}</a></dd>
-                    <dd><a href="product.html#s8" class="nav-a">{{text(12)}}</a></dd>
+                    <dd><a href="/product?p=s1" class="nav-a">{{text(5)}}</a></dd>
+                    <dd><a href="/product?p=s2" class="nav-a">{{text(6)}}</a></dd>
+                    <dd><a href="/product?p=s3" class="nav-a">{{text(7)}}</a></dd>
+                    <dd><a href="/product?p=s4" class="nav-a">{{text(8)}}</a></dd>
+                    <dd><a href="/product?p=s5" class="nav-a">{{text(9)}}</a></dd>
+                    <dd><a href="/product?p=s6" class="nav-a">{{text(10)}}</a></dd>
+                    <dd><a href="/product?p=s7" class="nav-a">{{text(11)}}</a></dd>
+                    <dd><a href="/product?p=s8" class="nav-a">{{text(12)}}</a></dd>
                 </dl>
             </div>
             <div class="col col-20">
                 <dl class="nav-dl">
                     <dt>{{text(13)}}</dt>
-                    <dd><a href="customer.html#s1" class="nav-a">{{text(14)}}</a></dd>
-                    <dd><a href="customer.html#s2" class="nav-a">{{text(15)}}</a></dd>
-                    <dd><a href="customer.html#s3" class="nav-a">{{text(16)}}</a></dd>
+                    <dd><a href="/customer?p=s1" class="nav-a">{{text(14)}}</a></dd>
+                    <dd><a href="/customer?p=s2" class="nav-a">{{text(15)}}</a></dd>
+                    <dd><a href="/customer?p=s3" class="nav-a">{{text(16)}}</a></dd>
                 </dl>
             </div>
             <div class="col col-20">
                 <dl class="nav-dl">
                     <dt>{{text(17)}}</dt>
-                    <dd><a href="work.html#s1" class="nav-a">{{text(18)}}</a></dd>
-                    <dd><a href="work.html#s2" class="nav-a">{{text(19)}}</a></dd>
-                    <dd><a href="work.html#s3" class="nav-a">{{text(20)}}</a></dd>
+                    <dd><a href="/work?p=s1" class="nav-a">{{text(18)}}</a></dd>
+                    <dd><a href="/work?p=s2" class="nav-a">{{text(19)}}</a></dd>
+                    <dd><a href="/work?p=s3" class="nav-a">{{text(20)}}</a></dd>
                 </dl>
             </div>
             <div class="col col-20">
                 <dl class="nav-dl">
                     <dt>{{text(21)}}</dt>
-                    <dd><a href="contact.html#s1" class="nav-a">{{text(22)}}</a></dd>
-                    <dd><a href="contact.html#s2" class="nav-a">{{text(23)}}</a></dd>
-                    <dd><a href="contact.html#s3" class="nav-a">{{text(24)}}</a></dd>
+                    <dd><a href="/contact?p=s1" class="nav-a">{{text(22)}}</a></dd>
+                    <dd><a href="/contact?p=s2" class="nav-a">{{text(23)}}</a></dd>
+                    <dd><a href="/contact?p=s3" class="nav-a">{{text(24)}}</a></dd>
                 </dl>
             </div>
         </div>
