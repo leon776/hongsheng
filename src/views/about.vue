@@ -14,11 +14,11 @@
                         </div>
                         <div class="fr card-wapper">
                             <div class="card ani"  swiper-animate-effect="fadeInRight" swiper-animate-duration="0.6s" swiper-animate-delay="0.2s">
-                                <h2 class="c-title">关于鸿升</h2>
-                                <p class="c-intro">About us</p>
-                                <p class="time"><span class="num">1984</span>年成立于香港</p>
+                                <h2 class="c-title">{{about(0)}}</h2>
+                                <p class="c-intro">{{about(1)}}</p>
+                                <p class="time"><span class="num">{{about(2)}}</span>{{about(3)}}</p>
                                 <div class="content">
-                                    鸿昇集团致力于电子、制造、消费、实业以及烘焙和甜点行业。作为公认的连通及线束行业先锋，鸿昇集团提供最全面的服务以及最具竞争力的价格。鸿昇集团的产品以其质量、扩展性、易用性以及创新型技术而广受欢迎。我们仔细聆听客户心声并与其密切合作确保提供上乘的产品和服务满足其需求。鸿昇集团训练有素的员工及其全心服务随时为您提供全年365天无休一周7天及一天24小时服务。
+                                    {{about(4)}}
                                 </div>
                                 <img src="/static/images/about-logo.png" class="logo-img">
                             </div>
@@ -29,8 +29,8 @@
             <div class="swiper-slide s2">
                 <div class="container">
                     <div class="title-box ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">
-                        <h2 class="title">超过30年的成功运营</h2>
-                        <p class="intro">致力于电子、制造、消费、实业以及烘焙和甜点行业</p>
+                        <h2 class="title">{{about(5)}}</h2>
+                        <p class="intro">{{about(6)}}</p>
                     </div>
                     <div class="main-box ani"  swiper-animate-effect="fadeIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
                         <i class="icon icon-right-circle next"></i>
@@ -58,8 +58,8 @@
             <div class="swiper-slide s3">
                 <div class="col left">
                     <div class="organization ani"  swiper-animate-effect="fadeIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">
-                        <h2 class="title">组织架构</h2>
-                        <p class="intro">Organization Structure</p>
+                        <h2 class="title">{{about(7)}}</h2>
+                        <p class="intro">{{about(8)}}</p>
                     </div>
                 </div>
                 <div class="col right">
@@ -160,7 +160,14 @@ export default {
         this.team = this.fetch('团队', this.dataIndex);
         this.team.forEach((v, k) => {
             this.team[k].intro = this.team[k].intro.replace(/[\n\r\t]/g, '<br />');
-    });
+        });
+
+        this.body = this.fetch('关于鸿昇');
     },
+    methods: {
+        about(index) {
+            return this.body[index][this.lang];
+        },
+    }
 }
 </script>

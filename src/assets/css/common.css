@@ -126,4 +126,12 @@ html, body, #app{
     position: relative;
     height: 100%;
 }
-
+.index-main .s1{
+    background: #038ce2;
+}
+.about-main .s1{
+    background: #088ad1;
+}
+.advantage-main .s1{
+    background: #545e67;
+}
