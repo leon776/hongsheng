@@ -1,6 +1,6 @@
 <template>
 <div class="content-item ct5 current">
-    <p>设计阶段的项目早期介入理想情况下在产品设计的早期开始介入。鸿昇集团实力雄厚的产品经理和设计销售工程师为客户提供全系列设计支持/技术支持服务。我们的宗旨是为尊贵的客户提供单项销售同时提供一站式服务。我们都理念定位在解决方案，产品经理和设计销售工程师将识别客户需求并提供最佳的性价比优化解决方案，我们为客户提供了以下成功设计支持案例。</p>
+    <p>{{base(42)}}</p>
 
     <div class="card-wrapper">
         <div class="row">
@@ -109,6 +109,11 @@
 </template>
 <script>
 export default {
-
+  props:['baseData', 'lang'],
+  methods: {
+    base(index) {
+      return this.baseData[index][this.lang];
+    },
+  }
 }
 </script>

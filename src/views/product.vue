@@ -25,14 +25,14 @@
               {{head(25)}}：<a href="/">{{head(0)}}</a><em class="song"> &gt; </em><a href="/product?p=s1" class="cur">{{head(4)}}</a>
           </div>
           <div class="tab-content-list">
-              <s1 v-if="page === 's1'"></s1>
-              <s2 v-if="page === 's2'"></s2>
-              <s3 v-if="page === 's3'"></s3>
-              <s4 v-if="page === 's4'"></s4>
-              <s5 v-if="page === 's5'"></s5>
-              <s6 v-if="page === 's6'"></s6>
-              <s7 v-if="page === 's7'"></s7>
-              <s8 v-if="page === 's8'"></s8>
+              <s1 v-if="page === 's1'" :base-data="base" :lang="lang"></s1>
+              <s2 v-if="page === 's2'" :base-data="base" :lang="lang"></s2>
+              <s3 v-if="page === 's3'" :base-data="base" :lang="lang"></s3>
+              <s4 v-if="page === 's4'" :base-data="base" :lang="lang"></s4>
+              <s5 v-if="page === 's5'" :base-data="base" :lang="lang"></s5>
+              <s6 v-if="page === 's6'" :base-data="base" :lang="lang"></s6>
+              <s7 v-if="page === 's7'" :base-data="base" :lang="lang"></s7>
+              <s8 v-if="page === 's8'" :base-data="base" :lang="lang"></s8>
           </div>
       </div>
       <div id="modal" class="c-modal" style="display: none;">
@@ -85,6 +85,7 @@ export default {
   data () {
     return {
       lang: this.$ssrContext.lang,
+      base: [],
       page: this.$route.query.p || 's1',
       headData: [],
       body: [],
@@ -95,7 +96,7 @@ export default {
     }
   },
   created() {
-    
+    this.base = this.fetch('产品及服务');
   },
   methods: {
 
