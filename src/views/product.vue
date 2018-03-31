@@ -11,14 +11,14 @@
   </div>
   <div class="container">
       <div class="left-bar">
-          <a href="/product?p=s1" class="w-btn" :class="{'active' : page === 's1'}">{{head(4)}}</a>
-          <a href="/product?p=s2" class="w-btn" :class="{'active' : page === 's2'}">{{head(5)}}</a>
-          <a href="/product?p=s3" class="w-btn" :class="{'active' : page === 's3'}">{{head(6)}}</a>
-          <a href="/product?p=s4" class="w-btn" :class="{'active' : page === 's4'}">{{head(7)}}</a>
-          <a href="/product?p=s5" class="w-btn" :class="{'active' : page === 's5'}">{{head(8)}}</a>
-          <a href="/product?p=s6" class="w-btn" :class="{'active' : page === 's6'}">{{head(9)}}</a>
-          <a href="/product?p=s7" class="w-btn" :class="{'active' : page === 's7'}">{{head(10)}}</a>
-          <a href="/product?p=s8" class="w-btn" :class="{'active' : page === 's8'}">{{head(11)}}</a>
+          <a href="/product?p=s1" class="w-btn" :class="{'active' : page === 's1'}">{{head(5)}}</a>
+          <a href="/product?p=s2" class="w-btn" :class="{'active' : page === 's2'}">{{head(6)}}</a>
+          <a href="/product?p=s3" class="w-btn" :class="{'active' : page === 's3'}">{{head(7)}}</a>
+          <a href="/product?p=s4" class="w-btn" :class="{'active' : page === 's4'}">{{head(8)}}</a>
+          <a href="/product?p=s5" class="w-btn" :class="{'active' : page === 's5'}">{{head(9)}}</a>
+          <a href="/product?p=s6" class="w-btn" :class="{'active' : page === 's6'}">{{head(10)}}</a>
+          <a href="/product?p=s7" class="w-btn" :class="{'active' : page === 's7'}">{{head(11)}}</a>
+          <a href="/product?p=s8" class="w-btn" :class="{'active' : page === 's8'}">{{head(12)}}</a>
       </div>
       <div class="right-main-wrapper">
           <div class="page-guide">
