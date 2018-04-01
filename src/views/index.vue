@@ -6,16 +6,16 @@
                 <img src="/static/images/index-banner.jpg" class="full-bg">
                 <div class="ani center-box" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s"
                      swiper-animate-delay="0.3s">
-                    <h2 class="title"><span class="title-num">1984</span>年至今</h2>
-                    <p class="intro">坚持<span class="point"></span>品质<span class="point"></span>卓越</p>
+                    <h2 class="title"><span class="title-num">{{text(0)}}</span>{{text(1)}}</h2>
+                    <p class="intro">{{text(2)}}<span class="point"></span>{{text(3)}}<span class="point"></span>{{text(4)}}</p>
                     <i class="icon icon-circle-arrow-down" onclick="slideNextPage()"></i>
                 </div>
             </div>
             <div class="swiper-slide s2">
                 <div class="container">
                     <div class="title-box">
-                        <h2 class="c-title">产品及服务</h2>
-                        <p class="c-intro">Products & Services</p>
+                        <h2 class="c-title">{{text(5)}}</h2>
+                        <p class="c-intro" v-if="lang !== 'en'">Products & Services</p>
                         <div class="right-box">
                             <i class="icon icon-left product-prev"></i>
                             <div class="line"></div>
@@ -35,8 +35,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">电子产品、标签、烘培能力</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(6)}}</h3>
+                                        <p class="intro">{{text(7)}}</p>
                                     </div>
                                 </a>
 
@@ -50,8 +50,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">产品线</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(8)}}</h3>
+                                        <p class="intro">{{text(9)}}</p>
                                     </div>
                                 </a>
 
@@ -65,8 +65,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">线束装配及印刷电路板组件</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(10)}}</h3>
+                                        <p class="intro">{{text(11)}}</p>
                                     </div>
                                 </a>
 
@@ -80,8 +80,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">纸张切割</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(12)}}</h3>
+                                        <p class="intro">{{text(13)}}</p>
                                     </div>
                                 </a>
                             </div>
@@ -95,8 +95,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">原始设计制造商及项目早期介入</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(14)}}</h3>
+                                        <p class="intro">{{text(15)}}</p>
                                     </div>
                                 </a>
 
@@ -110,8 +110,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">售后服务</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(16)}}</h3>
+                                        <p class="intro">{{text(17)}}</p>
                                     </div>
                                 </a>
 
@@ -125,8 +125,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">供应链管理</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(18)}}</h3>
+                                        <p class="intro">{{text(19)}}</p>
                                     </div>
                                 </a>
 
@@ -140,8 +140,8 @@
                                         </div>
                                     </div>
                                     <div class="txt-box">
-                                        <h3 class="title">烘培及甜点</h3>
-                                        <p class="intro">这是一段简述，目前采用占位文案代替</p>
+                                        <h3 class="title">{{text(20)}}</h3>
+                                        <p class="intro">{{text(21)}}</p>
                                     </div>
                                 </a>
                             </div>
@@ -155,11 +155,11 @@
                 <div class="col col-50 right-banner">
                     <div class="content ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.4s"
                          swiper-animate-delay="0.2s">
-                        <h2 class="c-title">关于鸿昇</h2>
-                        <p class="c-intro">About Hung Shang</p>
+                        <h2 class="c-title">{{text(22)}}</h2>
+                        <p class="c-intro" v-if="lang !== 'en'">About Hung Shang</p>
                         <div class="line"></div>
                         <div class="about">
-                            1984年，鸿昇集团在香港成立。我们致力于电子、制造、消费、实业以及烘焙和甜点行业。作为公认的连通及线束行业先锋，鸿昇集团提供最全面的服务以及最具竞争力的价格。鸿昇集团的产品以其质量、扩展性、易用性以及创新型技术而广受欢迎。我们仔细聆听客户心声并与其密切合作确保提供上乘的产品和服务满足其需求。
+                            {{text(23)}}
                             <a href="/about" class="c-btn btn-more">MORE</a>
                         </div>
                     </div>
@@ -171,35 +171,35 @@
                     <div class="center ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.4s"
                          swiper-animate-delay="0.2s">
                         <i class="icon icon-num1"></i>
-                        <p class="title">诚信厂商</p>
+                        <p class="title">{{text(24)}}</p>
                     </div>
                 </div>
                 <div class="col col-25 num-item2">
                     <div class="center ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.4s"
                          swiper-animate-delay="0.3s">
                         <i class="icon icon-num2"></i>
-                        <p class="title">供应国家和地区</p>
+                        <p class="title">{{text(25)}}</p>
                     </div>
                 </div>
                 <div class="col col-25 num-item3">
                     <div class="center ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.4s"
                          swiper-animate-delay="0.4s">
                         <i class="icon icon-num3"></i>
-                        <p class="title">成功企业选择</p>
+                        <p class="title">{{text(26)}}</p>
                     </div>
                 </div>
                 <div class="col col-25 num-item4">
                     <div class="center ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.4s"
                          swiper-animate-delay="0.5s">
                         <i class="icon icon-num4"></i>
-                        <p class="title">出货总量</p>
+                        <p class="title">{{text(27)}}</p>
                     </div>
                 </div>
                 <div class="cb"></div>
                 <div class="more-wrapper ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.4s"
                      swiper-animate-delay="0.8s">
                     <a href="/about" class="c-btn btn-more">MORE</a>
-                    <p class="intro">更深入的了解我们</p>
+                    <p class="intro">{{text(28)}}</p>
                 </div>
 
             </div>
@@ -208,11 +208,11 @@
                     <div class="container">
                         <div class="title-box">
                             <div class="fl">
-                                <h2 class="c-title">关于鸿昇</h2>
+                                <h2 class="c-title">{{text(22)}}</h2>
                                 <p class="c-intro">About Hung Shang</p>
                             </div>
                             <div class="fr">
-                                <span class="w-btn active" id="food">食品、饮料类</span><span class="w-btn" id="tech">电子、线束加工类</span>
+                                <span class="w-btn active" id="food">{{text(29)}}</span><span class="w-btn" id="tech">{{text(30)}}</span>
                             </div>
                             <div class="cb"></div>
                         </div>
@@ -448,11 +448,18 @@ export default {
   mixins: [mixin],
   data () {
     return {
-      script: `\<script src="/static/js/inject/index.js"\><\/script\>`,
+        data: [],
+        lang: this.$ssrContext.lang,
+        script: `\<script src="/static/js/inject/index.js"\><\/script\>`,
     }
   },
   created() {
-    // console.log(this.$ssrContext)
+    this.data = this.fetch('首页');
   },
+  methods: {
+    text(index) {
+        return this.data[index][this.lang];
+    },
+}
 }
 </script>

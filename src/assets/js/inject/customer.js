@@ -1,4 +1,21 @@
 var swiper2;
+var wording = [
+    '行业比例',
+    '工业',
+    '标签',
+    '汽车',
+    '家用电器',
+    '安保',
+    '无人机',
+    '消耗品',
+    '其他',
+    '地区比例',
+    '华南',
+    '华中',
+    '华北',
+    '香港',
+    '海外',
+];
 function initSwiper(){
     if(swiper2 == undefined){
         setTimeout(function(){
@@ -19,7 +36,7 @@ function initSwiper(){
 
 var option1 = {
     title : {
-        text: '行业比例',
+        text: wording[0],
         x:'center',
         y:'center',
         textStyle: {
@@ -36,11 +53,11 @@ var option1 = {
         orient: 'horizontal',
         x: 'center',
         y: 'bottom',
-        data:['工业','标签','汽车','家用电器','安保','无人机','消耗品','其他']
+        data:[wording[1],wording[2],wording[3],wording[4],wording[5],wording[6],wording[7],wording[8]]
     },
     series: [
         {
-            name:'行业比例',
+            name:wording[0],
             type:'pie',
             radius: ['40%', '55%'],
             avoidLabelOverlap: true,
@@ -62,21 +79,21 @@ var option1 = {
                 }
             },
             data:[
-                {value:9, name:'工业'},
-                {value:14, name:'标签'},
-                {value:5, name:'汽车'},
-                {value:24, name:'家用电器'},
-                {value:4, name:'安保'},
-                {value:10, name:'无人机'},
-                {value:5, name:'消耗品'},
-                {value:29, name:'其他'},
+                {value:9, name:wording[1]},
+                {value:14, name:wording[2]},
+                {value:5, name:wording[3]},
+                {value:24, name:wording[4]},
+                {value:4, name:wording[5]},
+                {value:10, name:wording[6]},
+                {value:5, name:wording[7]},
+                {value:29, name:wording[8]},
             ]
         }
     ]
 };
 var option2 = {
     title : {
-        text: '地区比例',
+        text: wording[9],
         x:'center',
         y:'center',
         textStyle: {
@@ -93,11 +110,11 @@ var option2 = {
         orient: 'horizontal',
         x: 'center',
         y: 'bottom',
-        data:['华南','华中','华北','香港','海外']
+        data:[wording[10],wording[11],wording[12],wording[13],wording[14]]
     },
     series: [
         {
-            name:'地区比例',
+            name:wording[9],
             type:'pie',
             radius: ['40%', '55%'],
             avoidLabelOverlap: true,
@@ -119,11 +136,11 @@ var option2 = {
                 }
             },
             data:[
-                {value:59, name:'华南'},
-                {value:26, name:'华中'},
-                {value:2, name:'华北'},
-                {value:9, name:'香港'},
-                {value:4, name:'海外'}
+                {value:59, name:wording[10]},
+                {value:26, name:wording[11]},
+                {value:2, name:wording[12]},
+                {value:9, name:wording[13]},
+                {value:4, name:wording[14]}
             ]
         }
     ]
