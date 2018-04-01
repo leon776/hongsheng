@@ -1,7 +1,7 @@
 <template>
 <header class="nav">
     <div class="clearfix container">
-        <a class="logo" href="index.html">
+        <a class="logo" href="/">
             <img src="/static/images/logo.png" alt="">
         </a>
 

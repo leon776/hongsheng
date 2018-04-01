@@ -88,7 +88,6 @@ export default {
   mixins: [mixin],
   data () {
     return {
-      lang: this.$ssrContext.lang,
       data: {},
       script: `\<script src="/static/js/inject/product.js"\><\/script\>`,
     }
