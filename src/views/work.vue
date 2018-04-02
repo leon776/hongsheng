@@ -48,7 +48,7 @@ export default {
     return {
       lang: this.$ssrContext.lang,
       page: this.$route.query.p || 's1',
-      head: [],
+      headData: [],
       body: [],
       script: `\<script src="/static/js/inject/work.js"\><\/script\>`,
     }
@@ -56,5 +56,6 @@ export default {
   created() {
    
   },
+  
 }
 </script>
