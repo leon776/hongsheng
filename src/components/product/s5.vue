@@ -11,7 +11,7 @@
             >
                 <div class="c-card2">
                     <div class="pic-box">
-                        <img :src="`/static/images/pd2-${index+1}.jpg`" class="img">
+                        <img :src="`/static/images/product/pd2-${index+1}.jpg`" class="img">
                     </div>
                     <div class="clearfix txt-box">
                         <div class="fl title">{{item.title}}</div>

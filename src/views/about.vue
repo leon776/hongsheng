@@ -41,7 +41,7 @@
                                     <i class="icon icon-t-left"></i>
                                     <i class="icon icon-t-right"></i>
                                 </div>
-                                <div class="swiper-slide" v-for="(item,index) in historyList" :onclick="'showModal('+ JSON.stringify(item) +', \''+ '/static/images/history'+ (index + 1) +'.jpg' +'\')'">
+                                <div class="swiper-slide" v-for="(item,index) in historyList" :onclick="'showModal('+ JSON.stringify(item) +', \''+ '/static/images/about/history'+ (index + 1) +'.jpg' +'\')'">
                                     <i class="icon icon-time-dot"></i>
                                     <div class="time-box">
                                         <div class="year">{{item.title}}</div>

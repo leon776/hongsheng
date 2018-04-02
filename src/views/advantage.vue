@@ -124,7 +124,7 @@
                                     <a class="inner" :href="item.url" target="_blank">
                                         <div class="title">{{item.title}}</div>
                                         <div class="img-box">
-                                            <img class="img" :src="'/static/images/certificate'+(index+1)+'.jpg'">
+                                            <img class="img" :src="'/static/images/certificate/certificate'+(index+1)+'.jpg'">
                                         </div>
                                     </a>
                                 </div>

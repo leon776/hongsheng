@@ -11,7 +11,7 @@
                 v-if="data.length > 0">
                   <div class="c-card2">
                       <div class="pic-box">
-                          <img :src="'/static/images/pd'+ (index + 1) +'.jpg'" class="img">
+                          <img :src="'/static/images/product/pd1-'+ (index + 1) +'.jpg'" class="img">
                       </div>
                       <div class="clearfix txt-box">
                         <div class="fl title">{{item.title}}</div>
