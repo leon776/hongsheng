@@ -6,13 +6,14 @@ const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const VueSSRServerPlugin = require('vue-ssr-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
-
 const env = require('../config/prod.env')
+
 function getExternals() {
   return fs.readdirSync(path.resolve(__dirname, '../node_modules'))
     .filter(filename => !filename.includes('.bin'))
@@ -25,8 +26,8 @@ function getExternals() {
 const webpackConfig = merge(baseWebpackConfig, {
   context: path.resolve(__dirname, '..'),
   node: {
-    __filename: true,
-    __dirname: true
+    // __filename: true,
+    __dirname: 'mock',
   },
   target: 'node',
   entry: './src/entry.server.js',
@@ -70,6 +71,24 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
+
+    // copy custom static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      }, {
+        from: path.resolve(__dirname, '../src/server.js'),
+        to: config.build.assetsRoot
+      }, {
+        from: path.resolve(__dirname, '../src/index.template.html'),
+        to: config.build.assetsRoot
+      }, {
+        from: path.resolve(__dirname, '../src/api/'),
+        to: path.join(config.build.assetsRoot, 'api')
+      }
+    ]),
   ]
 })
 

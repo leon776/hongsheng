@@ -1,5 +1,6 @@
 import { fetch } from "../api/xls";
-// title-mixin.js
+
+// mixin.js
 function getTitle (vm) {
   const { title } = vm.$route.meta ? vm.$route.meta : {};
 
@@ -12,7 +13,9 @@ const serverTitleMixin = {
     this.headData = this.fetch('导航');
   },
   methods: {
-    fetch,
+    fetch(...args) {
+      return fetch.call(this, this.$ssrContext.dirname, ...args);
+    },
     head(index) {
       return this.headData[index][this.lang];
     },

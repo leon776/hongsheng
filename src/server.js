@@ -5,10 +5,10 @@ const server = new express()
 const { createBundleRenderer } = require('vue-server-renderer')
 const templateHtml = require('fs').readFileSync(path.resolve(__dirname, './index.template.html'), 'utf-8')
 
-let distPath = '../dist'
+let distPath = '.'
 let port = 3000
 
-server.use('/static', express.static(path.join(__dirname, '../dist/static')))
+server.use('/static', express.static(path.join(__dirname, `${distPath}/static`)))
 server.use(cookieParser())
 
 const renderer = createBundleRenderer(require(`${distPath}/vue-ssr-bundle.json`), { 
@@ -22,6 +22,7 @@ server.get('*', (req, res) => {
   const context = {
     url: req.url,
     lang: req.cookies.lang || 'zh',
+    dirname: __dirname,
   }
   // 这里无需传入一个应用程序，因为在执行 bundle 时已经自动创建过。
   // 现在我们的服务器与应用程序已经解耦！

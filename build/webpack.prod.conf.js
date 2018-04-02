@@ -118,10 +118,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../src/assets/'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
-      },
-      {
+      }, {
         from: path.resolve(__dirname, '../src/server.js'),
-        to: config.build.assetsSubDirectory
+        to: config.build.assetsRoot
+      }, {
+        from: path.resolve(__dirname, '../src/index.template.html'),
+        to: config.build.assetsRoot
       }
     ]),
 
