@@ -84,7 +84,6 @@ export default {
   mixins: [mixin],
   data () {
     return {
-      lang: this.$ssrContext.lang,
       base: [],
       page: this.$route.query.p || 's1',
       headData: [],
@@ -96,7 +95,7 @@ export default {
     }
   },
   created() {
-    this.base = this.fetch('产品及服务');
+    this.fetch('base', '产品及服务');
   },
   methods: {
 

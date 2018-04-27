@@ -1,9 +1,10 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const path = require('path')
-const server = new express()
 const { createBundleRenderer } = require('vue-server-renderer')
 const templateHtml = require('fs').readFileSync(path.resolve(__dirname, './index.template.html'), 'utf-8')
+const { async } = require("./api/xls");
+const server = new express()
 
 let distPath = '.'
 let port = 3000
@@ -17,20 +18,33 @@ const renderer = createBundleRenderer(require(`${distPath}/vue-ssr-bundle.json`)
   // clientManifest: require(`${distPath}/vue-ssr-client-manifest.json`) 
 })
 
-// 在服务器处理函数中……
+// api
+server.get('/api/*', (req, res) => {
+  const json = async(__dirname, undefined, req.params[0]);
+  if(json) {
+    res.status(200)
+    res.type = 'text/json; charset=utf-8'
+    res.json(json)
+    res.end()
+  } else {
+    res.status(404)
+    res.end()
+  }
+});
+// 页面
 server.get('*', (req, res) => {
   const context = {
     url: req.url,
     lang: req.cookies.lang || 'zh',
     dirname: __dirname,
+    state: {},
   }
-  // 这里无需传入一个应用程序，因为在执行 bundle 时已经自动创建过。
-  // 现在我们的服务器与应用程序已经解耦！
+  // bundle renderer 在调用 renderToString 时，它将自动执行「由 bundle 创建的应用程序实例」所导出的函数（传入上下文作为参数），然后渲染它
   renderer.renderToString(context, (err, html) => {
     // 处理异常……
     if (err) {
       console.log(err)
-      res.status(404)
+      res.status(500)
       res.end()
     }
     res.status(200)

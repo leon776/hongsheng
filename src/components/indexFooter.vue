@@ -63,7 +63,6 @@ export default{
     data() {
         return {
             data: [],
-            lang: this.$ssrContext.lang,
             current: '',
         };
     },
@@ -72,12 +71,11 @@ export default{
     },
     mixins: [mixin],
     created() {
-        this.data = this.fetch('导航');
         this.current = this.$route.meta.active || '';
     },
     methods: {
         text(index) {
-            return this.data[index][this.lang];
+            return this.headData[index] ? this.headData[index][this.lang] : null;
         },
     }
 }

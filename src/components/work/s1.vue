@@ -26,7 +26,6 @@ export default {
     data() {
         return {
             data: [],
-            lang: this.$ssrContext.lang,
             current: '',
         };
     },
@@ -35,7 +34,7 @@ export default {
     },
     mixins: [mixin],
     created() {
-        this.data = this.fetch('为什么选择鸿升');
+        this.fetch('data', '为什么选择鸿升');
         this.current = this.$route.meta.active || '';
     },
     methods: {

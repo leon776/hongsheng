@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <template v-html="script"></template>
+    <div v-html="script"></div>
 </div>
 </template>
 
@@ -125,7 +125,6 @@ export default {
     mixins: [mixin],
     data () {
         return {
-            lang: this.$ssrContext.lang,
             headData: [],
             body: [],
             historyList: {},
@@ -152,21 +151,23 @@ export default {
         }
     },
     created() {
-        this.historyList = this.fetch('集团历史', this.dataIndex);
-        this.historyList.forEach((v, k) => {
-            this.historyList[k].content = this.historyList[k].content.replace(/[\n\r\t]/g, '<br />');
-        });
+        try{
+            this.fetch('historyList', '集团历史', this.dataIndex);
+            this.fetch('body', '关于鸿昇');
+            this.fetch('team', '团队', this.dataIndex);
+            this.historyList.forEach((v, k) => {
+                this.historyList[k].content = this.historyList[k].content.replace(/[\n\r\t]/g, '<br />');
+            });
+            this.team.forEach((v, k) => {
+                this.team[k].intro = this.team[k].intro.replace(/[\n\r\t]/g, '<br />');
+            });
+        } catch(e) {
 
-        this.team = this.fetch('团队', this.dataIndex);
-        this.team.forEach((v, k) => {
-            this.team[k].intro = this.team[k].intro.replace(/[\n\r\t]/g, '<br />');
-        });
-
-        this.body = this.fetch('关于鸿昇');
+        }
     },
     methods: {
         about(index) {
-            return this.body[index][this.lang];
+            return this.body[index] ? this.body[index][this.lang] : '';
         },
     }
 }

@@ -48,7 +48,6 @@ export default {
   mixins: [mixin],
   data () {
     return {
-      lang: this.$ssrContext.lang,
       page: this.$route.query.p || 's1',
       headData: [],
       body: [],

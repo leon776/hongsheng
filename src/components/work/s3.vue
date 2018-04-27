@@ -21,7 +21,6 @@ export default{
     data() {
         return {
             data: [],
-            lang: this.$ssrContext.lang,
             current: '',
         };
     },
@@ -41,7 +40,7 @@ export default{
     },
     mixins: [mixin],
     created() {
-        this.data = this.fetch('人力资源联络窗口', this.dataIndex);
+        this.fetch('data', '人力资源联络窗口', this.dataIndex);
     },
 }
 </script>

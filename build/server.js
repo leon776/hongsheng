@@ -10,7 +10,6 @@ const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.server.conf')
-
 const spinner = ora('building for server...')
 spinner.start()
 

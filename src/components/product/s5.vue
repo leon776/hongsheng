@@ -136,7 +136,7 @@ export default {
     };
   },
   created() {
-    this.data = this.fetch('原始设计制造商及项目早期介入', this.dataIndex);
+    this.fetch('data', '原始设计制造商及项目早期介入', this.dataIndex);
     this.data.forEach((v, k) => {
       this.data[k].content = this.data[k].content.replace(/[\n\r\t]/g, '<br />');
     });

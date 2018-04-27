@@ -108,7 +108,7 @@ export default {
     },
   },
   created() {
-    this.data = this.fetch('产品线', this.dataIndex);
+    this.fetch('data', '产品线', this.dataIndex);
     this.data.forEach((v, k) => {
       this.data[k].content = this.data[k].content.replace(/[\n\r\t]/g, '<br />');
     });

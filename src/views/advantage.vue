@@ -156,7 +156,6 @@ export default {
     mixins: [mixin],
     data () {
         return {
-            lang: this.$ssrContext.lang,
             headData: [],
             body: [],
             certificate: {},
@@ -178,8 +177,8 @@ export default {
         }
     },
     created() {
-        this.certificate = this.fetch('认证证书', this.dataIndex);
-        this.body = this.fetch('我们的优势');
+        this.fetch('certificate', '认证证书', this.dataIndex);
+        this.fetch('body', '我们的优势');
     },
     methods: {
         advantage(index) {

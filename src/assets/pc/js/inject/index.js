@@ -1,3 +1,4 @@
+(function(){
     var swiper;
     function slideNextPage() {
         swiper.swipeTo(1);
@@ -78,5 +79,7 @@
                 },20);
             }
         })
+        $('.s5 .w-btn').eq(0).click();
+        console.log(swiper)
     })
-    $('.s5 .w-btn').eq(0).click();
+})();

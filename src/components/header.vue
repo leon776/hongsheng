@@ -1,6 +1,6 @@
 <template>
 <header class="nav">
-    <div class="clearfix container">
+    <div class="clearfix container" v-if="data.length > 0">
         <a class="logo" href="/">
             <img src="/static/images/logo.png" alt="">
         </a>
@@ -8,10 +8,10 @@
         <div class="fr">
             <ul class="clearfix nav-list">
                 <li class="nav-master" :class="{'current' : current === 'index'}">
-                    <a href="/" class="tab-a">
+                    <router-link to="/" class="tab-a">
                         <span class="title">{{data[0][lang]}}</span>
                         <span class="line l0"></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="nav-master" :class="{'current' : current === 'about'}">
                     <a href="javascript:" class="tab-a">
@@ -19,8 +19,8 @@
                         <span class="line l1"></span>
                     </a>
                     <ul class="sub-tab st1">
-                        <li><a href="/about" class="sub-tab-a">{{data[2][lang]}}</a></li>
-                        <li><a href="/advantage" class="sub-tab-a">{{data[3][lang]}}</a></li>
+                        <li><router-link to="/about" class="sub-tab-a">{{data[2][lang]}}</router-link></li>
+                        <li><router-link to="/advantage" class="sub-tab-a">{{data[3][lang]}}</router-link></li>
                     </ul>
                 </li>
                 <li class="nav-master" :class="{'current' : current === 'product'}">
@@ -104,13 +104,12 @@ export default{
     data() {
         return {
             data: [],
-            lang: this.$ssrContext.lang,
             current: '',
         };
     },
     mixins: [mixin],
     created() {
-        this.data = this.fetch('导航');
+        this.fetch('data', '导航');
         this.current = this.$route.meta.active || '';
     },
 }

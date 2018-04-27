@@ -38,7 +38,6 @@ export default {
   mixins: [mixin],
   data () {
     return {
-      lang: this.$ssrContext.lang,
       page: this.$route.query.q || 0,
       headData: [],
       content: {},
@@ -60,8 +59,7 @@ export default {
     },
   },
   created() {
-    this.headData = this.fetch('导航');
-    this.content = this.fetch('工作机会', this.dataIndex)[this.page];
+    this.fetch('content', '工作机会', this.dataIndex)[this.page];
     this.content.content = this.content.content.replace(/[\n\r\t]/g, '<br />');
   },
   methods: {

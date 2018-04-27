@@ -10,36 +10,38 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const VueSSRServerPlugin = require('vue-ssr-webpack-plugin')
+// const VueSSRServerPlugin = require('vue-ssr-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
 const env = require('../config/prod.env')
-
+const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 function getExternals() {
   return fs.readdirSync(path.resolve(__dirname, '../node_modules'))
     .filter(filename => !filename.includes('.bin'))
     .reduce((externals, filename) => {
-        externals[filename] = `commonjs ${filename}`
-        return externals
+      externals[filename] = `commonjs ${filename}`
+      return externals
     }, {})
 }
 
 const webpackConfig = merge(baseWebpackConfig, {
   context: path.resolve(__dirname, '..'),
   node: {
-    // __filename: true,
-    __dirname: 'mock',
+    __filename: false,
+    __dirname: false
   },
   target: 'node',
   entry: './src/entry.server.js',
   output: {
     path: config.build.assetsRoot,
+    filename: '[name].js',
+    chunkFilename: 'js/chunk[id].js',
     libraryTarget: 'commonjs2',
   },
-  watch: true,
   externals: getExternals(),
-
+  watch: true,
+  devtool: '#source-map',
   plugins: [
-    // ssr
+    // ssr合并
     new VueSSRServerPlugin(),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
@@ -73,22 +75,22 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../src/assets/'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      }, {
-        from: path.resolve(__dirname, '../src/server.js'),
-        to: config.build.assetsRoot
-      }, {
-        from: path.resolve(__dirname, '../src/index.template.html'),
-        to: config.build.assetsRoot
-      }, {
-        from: path.resolve(__dirname, '../src/api/'),
-        to: path.join(config.build.assetsRoot, 'api')
-      }
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../src/assets/'),
+    //     to: config.build.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }, {
+    //     from: path.resolve(__dirname, '../src/server.js'),
+    //     to: config.build.assetsRoot
+    //   }, {
+    //     from: path.resolve(__dirname, '../src/index.template.html'),
+    //     to: config.build.assetsRoot
+    //   }, {
+    //     from: path.resolve(__dirname, '../src/api/'),
+    //     to: path.join(config.build.assetsRoot, 'api')
+    //   }
+    // ]),
   ]
 })
 

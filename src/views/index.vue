@@ -432,7 +432,7 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
-    <template v-html="script"></template>
+    <div v-html="script"></div>
 </div>
 </template>
 
@@ -449,16 +449,15 @@ export default {
   data () {
     return {
         data: [],
-        lang: this.$ssrContext.lang,
         script: `\<script src="/static/js/inject/index.js"\><\/script\>`,
     }
   },
   created() {
-    this.data = this.fetch('首页');
+    this.fetch('data', '首页');
   },
   methods: {
     text(index) {
-        return this.data[index][this.lang];
+        return this.data[index] ? this.data[index][this.lang] : null;
     },
 }
 }
