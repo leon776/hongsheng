@@ -21,8 +21,11 @@ const serverMixin = {
   methods: {
     fetch(...args) {
       const res = async.call(this, this.$ssrContext.dirname, ...args);
-      this.$ssrContext.state[args[1]] = res;
-      this[args[0]] = res;
+      const key = args[0];
+      const index = args[3];
+      this.$ssrContext.state[key] = res;
+      this[key] = index !== undefined ? res[index] : res;
+      return res;
     },
     head(index) {
       return this.headData[index][this.lang];

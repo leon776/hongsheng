@@ -2,21 +2,30 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 const { createBundleRenderer } = require('vue-server-renderer')
-const templateHtml = require('fs').readFileSync(path.resolve(__dirname, './index.template.html'), 'utf-8')
+const templatePc = require('fs').readFileSync(path.resolve(__dirname, './pc.template.html'), 'utf-8')
+const templateMobile = require('fs').readFileSync(path.resolve(__dirname, './mobile.template.html'), 'utf-8')
 const { async } = require("./api/xls");
 const server = new express()
+const ua = require('mobile-agent');
 
 let distPath = '.'
 let port = 3000
-
-server.use('/static', express.static(path.join(__dirname, `${distPath}/static`)))
+// 不想改pc的代码了
+server.use('/static', express.static(path.join(__dirname, `${distPath}/assets/pc`)));
+server.use('/mobile/static', express.static(path.join(__dirname, `${distPath}/assets/mobile`)));
 server.use(cookieParser())
 
-const renderer = createBundleRenderer(require(`${distPath}/vue-ssr-bundle.json`), { 
+const rendererPc = createBundleRenderer(require(`${distPath}/vue-ssr-server-bundle.json`), { 
   runInNewContext: false,
-  template: templateHtml, 
+  template: templatePc, 
   // clientManifest: require(`${distPath}/vue-ssr-client-manifest.json`) 
-})
+});
+
+const rendererMobile = createBundleRenderer(require(`${distPath}/vue-ssr-server-bundle.json`), { 
+  runInNewContext: false,
+  template: templateMobile, 
+  // clientManifest: require(`${distPath}/vue-ssr-client-manifest.json`) 
+});
 
 // api
 server.get('/api/*', (req, res) => {
@@ -26,6 +35,7 @@ server.get('/api/*', (req, res) => {
     res.type = 'text/json; charset=utf-8'
     res.json(json)
     res.end()
+    json = null;
   } else {
     res.status(404)
     res.end()
@@ -33,9 +43,12 @@ server.get('/api/*', (req, res) => {
 });
 // 页面
 server.get('*', (req, res) => {
+  const agent = ua(req.headers['user-agent']);
+  const renderer = agent.Mobile ? rendererMobile : rendererPc;
   const context = {
     url: req.url,
     lang: req.cookies.lang || 'zh',
+    mobile: agent.Mobile,
     dirname: __dirname,
     state: {},
   }

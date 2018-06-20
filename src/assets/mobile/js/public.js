@@ -31,6 +31,11 @@ $(function(){
 		$('.lang-box').toggleClass('active');
 	});
 
+	$('.lang-li .item').click(function() {
+		var lang = $(this).data('lang');
+		document.cookie = 'lang=' + lang;
+		location.reload();
+	});
 	//nav-btn
 	$('.bar-btn').click(function(){
 		$(this).toggleClass('active');
@@ -114,9 +119,9 @@ $(function(){
 		}
 	}
 	$('.hash-nav').on('click','.sub-nav-a',function(){
-		var target = $(this).attr('data-target'),
-			index = parseInt(target.substr(2))-1;
-		subnavClickHandle(target,index);
+		// var target = $(this).attr('data-target'),
+		// 	index = parseInt(target.substr(2))-1;
+		// subnavClickHandle(target,index);
 		$('.hash-nav').toggleClass('toggled');
 	});
 	$('.hash-nav').on('initclick','.sub-nav-a',function(){
@@ -126,5 +131,4 @@ $(function(){
 	})
 });
 //hash切换页面end
-
 

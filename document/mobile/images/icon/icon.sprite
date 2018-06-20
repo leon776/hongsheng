@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../images" ImageName="icon" IsPhone="false" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="nav-arrow.png" LocationX="0" LocationY="0" />
+    <Sprite Path="nav-plus.png" LocationX="11" LocationY="0" />
+    <Sprite Path="icon-bar.png" LocationX="83" LocationY="0" />
+    <Sprite Path="icon-bar-active.png" LocationX="144" LocationY="0" />
+    <Sprite Path="icon-gou.png" LocationX="191" LocationY="0" />
+    <Sprite Path="icon-hk.png" LocationX="215" LocationY="0" />
+    <Sprite Path="icon-zh.png" LocationX="254" LocationY="0" />
+    <Sprite Path="icon-us.png" LocationX="292" LocationY="0" />
+    <Sprite Path="icon-lang-down.png" LocationX="331" LocationY="0" />
+    <Sprite Path="icon-lang-up.png" LocationX="332" LocationY="16" />
+    <Sprite Path="icon-circle-arrow-down.png" LocationX="352" LocationY="0" />
+    <Sprite Path="icon-num1.png" LocationX="428" LocationY="0" />
+    <Sprite Path="icon-num2.png" LocationX="556" LocationY="0" />
+    <Sprite Path="icon-num3.png" LocationX="665" LocationY="0" />
+    <Sprite Path="icon-num4.png" LocationX="806" LocationY="0" />
+    <Sprite Path="icon-time-dot.png" LocationX="968" LocationY="0" />
+    <Sprite Path="icon-t-left.png" LocationX="215" LocationY="43" />
+    <Sprite Path="icon-t-right.png" LocationX="235" LocationY="43" />
+    <Sprite Path="sub-nav-icon.png" LocationX="260" LocationY="48" />
+    <Sprite Path="icon-adv1.png" LocationX="1032" LocationY="0" />
+    <Sprite Path="icon-adv2.png" LocationX="1163" LocationY="0" />
+    <Sprite Path="icon-adv3.png" LocationX="1294" LocationY="0" />
+    <Sprite Path="icon-adv4.png" LocationX="1425" LocationY="0" />
+    <Sprite Path="icon-adv5.png" LocationX="1556" LocationY="0" />
+    <Sprite Path="icon-adv6.png" LocationX="1687" LocationY="0" />
+  </SpriteList>
+</SpriteFile>

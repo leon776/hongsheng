@@ -132,3 +132,6 @@ html{
     font-size: 50px;
 }
 
+.product-main .hash-nav{padding-top: .8rem;}
+.product-main .hash-nav .sub-nav-a:first-child{background:#fff;color:#757575}
+.product-main .hash-nav .sub-nav-a.active{position: absolute;left: 0;top: 0;width: 100%;background:#dc3136;color:#fff}

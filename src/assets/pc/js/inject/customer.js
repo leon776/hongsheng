@@ -1,4 +1,12 @@
 var swiper2;
+function getCookie(name){
+ var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+ if(arr = document.cookie.match(reg)){
+     return (arr[2]);     
+ }else{
+     return null;     
+ }
+};
 var wording = [
     '行业比例',
     '工业',

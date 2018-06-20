@@ -75,22 +75,25 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // copy custom static assets
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../src/assets/'),
-    //     to: config.build.assetsSubDirectory,
-    //     ignore: ['.*']
-    //   }, {
-    //     from: path.resolve(__dirname, '../src/server.js'),
-    //     to: config.build.assetsRoot
-    //   }, {
-    //     from: path.resolve(__dirname, '../src/index.template.html'),
-    //     to: config.build.assetsRoot
-    //   }, {
-    //     from: path.resolve(__dirname, '../src/api/'),
-    //     to: path.join(config.build.assetsRoot, 'api')
-    //   }
-    // ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/'),
+        to: path.join(config.build.assetsRoot, 'assets'),
+        ignore: ['.*']
+      }, {
+        from: path.resolve(__dirname, '../src/server.js'),
+        to: config.build.assetsRoot
+      }, {
+        from: path.resolve(__dirname, '../src/pc.template.html'),
+        to: config.build.assetsRoot
+      }, {
+        from: path.resolve(__dirname, '../src/mobile.template.html'),
+        to: config.build.assetsRoot
+      }, {
+        from: path.resolve(__dirname, '../src/api/'),
+        to: path.join(config.build.assetsRoot, 'api')
+      }
+    ]),
   ]
 })
 
