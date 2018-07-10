@@ -48,7 +48,7 @@ body{min-width: 1200px;}
 
 /*----Public font----*/
 a {color:#b9b9b9;text-decoration:none; cursor:pointer;}
-a:active, .btn:active { position:relative; right:-1px;bottom:-1px;}
+a:active, .btn:active { position:relative;}
 a:hover { text-decoration:none;}
 a,a:hover{ outline:none; blr:expression(this.onFocus=this.blur());}
 .disable:active, .btn_disable:active { position:static;}
