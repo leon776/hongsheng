@@ -26,7 +26,7 @@ pc/移动切换，node判断，传入ssrContext中来切换路由组件，使用
 
 测试环境地址：
 
-123.207.232.183 root/@#*16..$^%zj$#*&
+123.207.232.183 root/@#*16..$^%zj$#*& 
 
 目录/data/www/hongsheng/dist/
 部署后pm2重启即可，pm2 restart ${id} 或 pm2 start server.js
