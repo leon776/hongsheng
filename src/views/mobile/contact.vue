@@ -44,9 +44,9 @@
 <script>
 import vFooter from '@/components/pc/footer.vue';
 import mixin from '@/mixins/mixin';
-import s1 from '@/components/pc/contact/s1.vue';
-import s2 from '@/components/pc/contact/s2.vue';
-import s3 from '@/components/pc/contact/s3.vue';
+import s1 from '@/components/mobile/contact/s1.vue';
+import s2 from '@/components/mobile/contact/s2.vue';
+import s3 from '@/components/mobile/contact/s3.vue';
 
 export default {
   name: 'about',

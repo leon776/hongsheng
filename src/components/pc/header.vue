@@ -62,15 +62,18 @@
                     </ul>
                 </li>
                 <li class="nav-master" :class="{'current' : current === 'contact'}">
-                    <a href="javascript:" class="tab-a">
-                        <span class="title">{{data[21][lang]}}<i class="icon icon-arrow"></i></span>
-                        <span class="line l5"></span>
+                    <a href="http://hungshang-group.mikecrm.com/OnxMj02" target="_blank" class="tab-a">
+                        <span class="title">{{data[21][lang]}}</span>
                     </a>
-                    <ul class="sub-tab st5">
-                        <li><a href="/contact?p=s1" class="sub-tab-a">{{data[22][lang]}}</a></li>
-                        <li><a href="/contact?p=s2" class="sub-tab-a">{{data[23][lang]}}</a></li>
-                        <li><a href="/contact?p=s3" class="sub-tab-a">{{data[24][lang]}}</a></li>
-                    </ul>
+                    <!--<a href="javascript:" class="tab-a">-->
+                        <!--<span class="title">{{data[21][lang]}}<i class="icon icon-arrow"></i></span>-->
+                        <!--<span class="line l5"></span>-->
+                    <!--</a>-->
+                    <!--<ul class="sub-tab st5">-->
+                        <!--<li><a href="/contact?p=s1" class="sub-tab-a">{{data[22][lang]}}</a></li>-->
+                        <!--<li><a href="/contact?p=s2" class="sub-tab-a">{{data[23][lang]}}</a></li>-->
+                        <!--<li><a href="/contact?p=s3" class="sub-tab-a">{{data[24][lang]}}</a></li>-->
+                    <!--</ul>-->
                 </li>
             </ul>
         </div>

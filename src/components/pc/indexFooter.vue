@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="foot-border">
-        Copyright ©2016 Hong Kong Hung Shang Electric Limited.
+        Copyright ©2018 Hong Kong Hung Shang Electric Limited.
     </div>
 </div>
 </template>

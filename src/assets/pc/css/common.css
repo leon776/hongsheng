@@ -145,3 +145,7 @@ html, body, #app{
     width: 100%;
     height: 100%;
 }
+
+.about-main .s4 .swiper-slide .container{
+    padding: 5% 16%;
+}
